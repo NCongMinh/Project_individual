@@ -72,8 +72,8 @@ for (var i = 0; i < add_cart.length; i++) {
     add.addEventListener("click", function (event) {
 
         var button = event.target;
-        var product = button.parentElement.parentElement;
-        var img = product.parentElement.getElementsByClassName("img_src")[0].src
+        var product = button.parentElement;
+        var img = product.getElementsByClassName("img_src")[0].src
         var title = product.getElementsByClassName("title_src")[0].innerText
         var price = product.getElementsByClassName("price_src")[0].innerText
         addItemToCart(title, price, img)
@@ -90,7 +90,7 @@ function addItemToCart(title, price, img) {
     var cart_title = cartItems.getElementsByClassName('cart-item-title')
     for (var i = 0; i < cart_title.length; i++) {
         if (cart_title[i].innerText == title) {
-            alert('Sản Phẩm Đã Có Trong Giỏ Hàng')
+            alert('Product already added! ')
             return
         }
     }
